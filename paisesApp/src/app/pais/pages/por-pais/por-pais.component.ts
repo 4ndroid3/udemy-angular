@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PorPaisComponent implements OnInit {
 
+  termino = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  buscar() {
+    console.log(this.termino);
   }
 
 }

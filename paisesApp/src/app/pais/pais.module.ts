@@ -4,10 +4,12 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 import { PorPaisComponent } from './pages/por-pais/por-pais.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule
   ],
   declarations: [
     VerPaisComponent,
