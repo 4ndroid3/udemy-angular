@@ -11,8 +11,15 @@ export class SidebarComponent implements OnInit {
   get historial () {
     return this.gifsService.historial
   }
+
+  buscar( campo: string ) {
+    console.log(campo)
+    this.gifsService.buscarGifs(campo)
+  }
   
+
   constructor(private gifsService: GifsService) { }
+
   
   ngOnInit() {
   }
