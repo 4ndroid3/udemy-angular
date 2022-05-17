@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators'
+import { catchError, tap } from 'rxjs/operators'
 import { Country } from '../interfaces/pais.interface';
 
 @Injectable({
@@ -10,6 +10,9 @@ import { Country } from '../interfaces/pais.interface';
 export class PaisService {
   
   private apiURL: string = 'https://restcountries.com/v2/';
+  get httpParams() {
+    return new HttpParams().set('fields', 'name,caital,alpha2Code,flag,population')
+  }
   
   constructor( private http: HttpClient ) { }
 
@@ -17,7 +20,7 @@ export class PaisService {
 
     const url = `${ this.apiURL }/name/${ termino }`;
 
-    return this.http.get<Country[]>( url )
+    return this.http.get<Country[]>( url, { params: this.httpParams }  )
   }
 
   getPaisPorAlpha( id: string ): Observable<Country> {
@@ -29,7 +32,12 @@ export class PaisService {
 
   buscarRegion( region: string ): Observable<Country[]> {
 
+    
+
     const url = `${ this.apiURL }/regionalbloc/${ region }`;
-    return this.http.get<Country[]>( url )
+    return this.http.get<Country[]>( url, { params: this.httpParams } )
+      .pipe(
+        tap( console.log )
+      )
   }
 }

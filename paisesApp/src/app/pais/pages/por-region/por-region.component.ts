@@ -26,7 +26,11 @@ export class PorRegionComponent implements OnInit {
     return ( region === this.regionActiva )? 'btn btn-primary': 'btn btn-outline-primary';
   }
   activarRegion( region: string ) {
+  
+    if ( region === this.regionActiva ) { return }
+
     this.regionActiva = region;
+    this.country = [];
     this.paisService.buscarRegion(this.regionActiva).subscribe( (res: Country[]) => {
       this.country = res
     })
