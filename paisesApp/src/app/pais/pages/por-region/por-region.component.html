@@ -1,3 +1,21 @@
-<p>
-  por-region works!
-</p>
+<h3>Buscar por region <small>{{ regionActiva }}</small></h3>
+
+<hr>
+
+<h5>Seleccione la region</h5>
+<div class="row">
+  <div class="col">
+    <button *ngFor="let region of regiones"
+            [class]="getClaseCSS( region )"
+            (click)="activarRegion( region )">
+      {{ region }}
+    </button>
+  </div>
+</div>
+<div *ngIf="country.length > 0" class="row">
+  <div class="col">
+    <app-pais-tabla [country]="country"></app-pais-tabla>
+  </div>  
+</div>
+
+<!-- https://restcountries.com/v2/regionalbloc/{regionalbloc} -->
