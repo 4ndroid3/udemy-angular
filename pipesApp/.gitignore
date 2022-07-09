@@ -9,9 +9,6 @@
 
 # dependencies
 /node_modules
-/paisesApp/node_modules
-/miUltimaApp/node_modules
-/pipesApp/node_modules
 
 # profiling files
 chrome-profiler-events*.json
