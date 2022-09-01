@@ -52,7 +52,10 @@
                 <div class="col-sm-9">
                     <input type="password"
                     class="form-control"
+                    formControlName="password"
                     placeholder="Contraseña de su cuenta">
+                    <span class="form-text text-danger"
+                    *ngIf="campoNoValido('password')">Las contraseñas deben ser iguales</span>
                 </div>
             </div>
             <!-- Password2-->
@@ -61,7 +64,10 @@
                 <div class="col-sm-9">
                     <input type="password"
                     class="form-control"
+                    formControlName="password2"
                     placeholder="Confirmar la contraseña">
+                    <span class="form-text text-danger"
+                    *ngIf="campoNoValido('password')">Las contraseñas deben ser iguales</span>
                 </div>
             </div>
 
@@ -82,6 +88,8 @@
 <h2>
     Form Valid: {{ miFormulario.valid}}
 </h2>
+<h2>Form Errors</h2>
+<pre>{{ miFormulario.errors | json }}</pre>
 
 <h5>
     Nombre
@@ -97,3 +105,13 @@
     Username
 </h5>
 <pre>{{ miFormulario.controls.username.errors | json }}</pre>
+
+<h5>
+    Contraseña
+</h5>
+<pre>{{ miFormulario.controls.password.errors | json }}</pre>
+
+<h5>
+    Confirmar Contraseña
+</h5>
+<pre>{{ miFormulario.controls.password2.errors | json }}</pre>
