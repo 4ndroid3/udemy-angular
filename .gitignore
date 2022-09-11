@@ -17,6 +17,7 @@
 /formulariosApp/node_modules
 /heroesApp/node_modules
 /pipesApp/node_modules
+/miUltimaApp
 
 # profiling files
 chrome-profiler-events*.json
