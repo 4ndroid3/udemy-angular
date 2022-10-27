@@ -18,6 +18,7 @@
 /heroesApp/node_modules
 /pipesApp/node_modules
 /miUltimaApp
+/auth-server-node/node_modules
 
 # profiling files
 chrome-profiler-events*.json
