@@ -7,6 +7,9 @@ require('dotenv').config(); // Al levantarse este import disponibiliza las varia
 // crear el servidor de express.
 const app = express();
 
+// Directorio público
+app.use( express.static('public') );
+
 // CORS
 app.use( cors() );
 
